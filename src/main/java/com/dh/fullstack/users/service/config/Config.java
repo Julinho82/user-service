@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Scope;
 @org.springframework.context.annotation.Configuration
 public class Config {
 
-    //@Bean (name="B-asus")
+    @Bean
     @Scope("prototype")
     public Asus beanAsus(){
         Asus asus=new Asus();
