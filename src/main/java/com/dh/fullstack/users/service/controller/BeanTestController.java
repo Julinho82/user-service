@@ -10,7 +10,7 @@ import org.springframework.web.context.annotation.RequestScope;
 
 
 @RestController
-@RequestMapping ("/accounts") //para colocar el path
+@RequestMapping ("/test") //para colocar el path
 @RequestScope
 public class BeanTestController {
 
