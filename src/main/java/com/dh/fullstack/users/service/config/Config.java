@@ -9,8 +9,8 @@ public class Config {
 
     @Bean
     @Scope("prototype")
-    public Asus beanAsus(){
-        Asus asus=new Asus();
+    public Asus beanAsus() {
+        Asus asus = new Asus();
         asus.setName("I am Asus");
 
         return asus;
