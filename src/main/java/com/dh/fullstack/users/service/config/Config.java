@@ -16,6 +16,7 @@ public class Config {
 
         return asus;
     }
+
     @Bean
     @Scope("prototype")
     public BeanPractice beanPracticeM(){
