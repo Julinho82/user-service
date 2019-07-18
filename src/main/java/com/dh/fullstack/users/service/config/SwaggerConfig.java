@@ -21,7 +21,8 @@ public class SwaggerConfig {
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.dh.fullstack.users.service.controller"))
                 .paths(PathSelectors.any())
-                .build().apiInfo(apiEndPointsInfo());
+                .build().apiInfo(apiEndPointsInfo())
+                .useDefaultResponseMessages(false);
     }
 
     private ApiInfo apiEndPointsInfo () {
