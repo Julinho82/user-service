@@ -22,4 +22,6 @@ public class Company extends User{
     public void setName(String name) {
         this.name = name;
     }
+
+
 }
