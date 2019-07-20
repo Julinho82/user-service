@@ -1,6 +1,6 @@
 package com.dh.fullstack.users.service.bean;
 
-public class BeanPractice {
+public class Prueba {
 
     private String name;
 

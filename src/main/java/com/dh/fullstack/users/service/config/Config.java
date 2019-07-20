@@ -1,7 +1,7 @@
 package com.dh.fullstack.users.service.config;
 
 import com.dh.fullstack.users.service.bean.Asus;
-import com.dh.fullstack.users.service.bean.BeanPractice;
+import com.dh.fullstack.users.service.bean.Prueba;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 
@@ -19,9 +19,9 @@ public class Config {
 
     @Bean
     @Scope("prototype")
-    public BeanPractice beanPracticeM(){
-        BeanPractice beanPractice= new BeanPractice();
-        beanPractice.setName("Soy bean Practica");
-        return beanPractice;
+    public Prueba beanPracticeM(){
+        Prueba prueba = new Prueba();
+        prueba.setName("Soy bean Practica");
+        return prueba;
     }
 }

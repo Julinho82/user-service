@@ -7,19 +7,33 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.annotation.RequestScope;
 
+/**
+ * @author Santiago Mamani
+ */
 @RestController
-@RequestMapping("/practica")
+@RequestMapping("/beans")
 @RequestScope
-public class BeanPracticeController {
+public class PruebaController {
+
+
 
     @Autowired
     private Prueba prueba;
+// DI por setter
+//    @Autowired
+//    public void setAsus(Asus asus) {
+//        this.asus = asus;
+//    }
+// DI Por constructor
+//    public AccountController(Asus asus) {
+//        this.asus = asus;
+//    }
+//    public AccountController() {
+//        this.asus = new Asus(); NO usar jamas
+//    }
+    @RequestMapping(value = "/prueba", method = RequestMethod.GET)
+    public Prueba readPrueba() {
 
-    @RequestMapping(value="/bean",method = RequestMethod.GET)
-    public Prueba readBeanPractice(){
-        prueba.setName(prueba.getName()+":GET");
         return prueba;
     }
-
-
 }
