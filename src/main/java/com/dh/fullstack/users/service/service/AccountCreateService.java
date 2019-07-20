@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 /**
- * @author Santiago Mamani
+ * @author Julio Daviu
  */
 @Scope("prototype")
 @Service
