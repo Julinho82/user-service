@@ -1,7 +1,10 @@
 package com.dh.fullstack.users.service.controller;
 
+import com.dh.fullstack.users.service.input.AccountInput;
 import com.dh.fullstack.users.service.input.EmployeeCreateInput;
+import com.dh.fullstack.users.service.model.domain.Account;
 import com.dh.fullstack.users.service.model.domain.Employee;
+import com.dh.fullstack.users.service.service.AccountCreateService;
 import com.dh.fullstack.users.service.service.EmployeeCreateService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -14,38 +17,35 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.annotation.RequestScope;
 
+/**
+ * @author Santiago Mamani
+ */
 @Api(
-        tags = "Employee Rest",
-        description = "Operation Over Employee"
+        tags = "employee",
+        description = "Operations over employees"
 )
 @RestController
-@RequestMapping("/public/employees") //para colocar el path
+@RequestMapping("/public/employees")
 @RequestScope
-public class EmployeeContoller {
+public class EmployeeController {
 
     @Autowired
     private EmployeeCreateService employeeCreateService;
 
     @ApiOperation(
-            value = "EndPoint to create employee"
+            value = "Create an employee"
     )
     @ApiResponses({
             @ApiResponse(
                     code = 401,
-                    message = "Unauthorized to create employee"
-            ),
-            @ApiResponse(
-                    code = 404,
-                    message = "Not Found Test employee"
+                    message = "Unauthorized to create account"
             )
     })
-    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public Employee createEmployee(@RequestBody EmployeeCreateInput input) {
+        employeeCreateService.setInput(input);
+        employeeCreateService.execute();
 
-       employeeCreateService.setInput(input);
-       employeeCreateService.execute();
-
-       return  employeeCreateService.getEmployee();
-
+        return employeeCreateService.getEmployee();
     }
 }

@@ -14,20 +14,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.annotation.RequestScope;
 
+/**
+ * @author Julio Daviu
+ */
 @Api(
-        tags = "Account Rest",
-        description = "Operation Over Accounts"
+        tags = "account rest",
+        description = "Operations over accounts"
 )
 @RestController
-@RequestMapping("/accounts") //para colocar el path
+@RequestMapping("/accounts")
 @RequestScope
-public class AccountContoller {
+public class AccountController {
 
     @Autowired
     private AccountCreateService accountCreateService;
 
     @ApiOperation(
-            value = "EndPoint to create account"
+            value = "Endpoint to create account"
     )
     @ApiResponses({
             @ApiResponse(
@@ -36,14 +39,12 @@ public class AccountContoller {
             ),
             @ApiResponse(
                     code = 404,
-                    message = "Not Found Test Account"
+                    message = "Not fount test"
             )
     })
-    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public Account createAccount(@RequestBody AccountInput input) {
-
         accountCreateService.setInput(input);
         return accountCreateService.save();
-
     }
 }

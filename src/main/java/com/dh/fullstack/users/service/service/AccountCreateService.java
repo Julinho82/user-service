@@ -1,14 +1,18 @@
 package com.dh.fullstack.users.service.service;
 
+import com.dh.fullstack.users.service.config.UsersMyProperties;
 import com.dh.fullstack.users.service.config.UsersProperties;
 import com.dh.fullstack.users.service.input.AccountInput;
 import com.dh.fullstack.users.service.model.domain.Account;
 import com.dh.fullstack.users.service.model.domain.AccountState;
-import com.dh.fullstack.users.service.model.repositories.AccountRespository;
+import com.dh.fullstack.users.service.model.repositories.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
+/**
+ * @author Santiago Mamani
+ */
 @Scope("prototype")
 @Service
 public class AccountCreateService {
@@ -19,21 +23,27 @@ public class AccountCreateService {
     private UsersProperties usersProperties;
 
     @Autowired
-    private AccountRespository accountRespository;
+    private UsersMyProperties usersMyProperties;
 
-    public Account save(){
-        return accountRespository.save(composeAccountInstance());
+    @Autowired
+    private AccountRepository accountRepository;
+
+    public Account save() {
+        System.out.println("countUser: " + usersProperties.getCountUser());
+        System.out.println("nameAsus: " + usersProperties.getNameAsus());
+        System.out.println("nameAsus: " + usersMyProperties.getApiVersion());
+
+        return accountRepository.save(composeAccountInstance());
     }
 
-    private Account composeAccountInstance(){
+    private Account composeAccountInstance() {
         AccountState state=AccountState.DEACTIVATED;
-        Boolean isPermit =isPermit();
-
-        if (isPermit) {
-            state= AccountState.ACTIVATED;
+        Boolean isPermit =  isPermit();
+        if (isPermit){
+            state = AccountState.ACTIVATED;
         }
 
-        Account instance= new Account();
+        Account instance = new Account();
         instance.setState(state);
         instance.setEmail(input.getEmail());
 
@@ -44,8 +54,7 @@ public class AccountCreateService {
         return input.getAge()>=usersProperties.getPermitAge();
     }
 
-    public void setInput (AccountInput input){
-    this.input=input;
+    public void setInput(AccountInput input) {
+        this.input = input;
     }
-
 }

@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
- * @author Santiago Mamani
+ * @author Julio Daviu
  */
 @Entity
 @Table(name = "user_table")

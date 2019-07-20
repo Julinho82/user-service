@@ -12,14 +12,14 @@ import javax.persistence.*;
 @Table(name = "account_table",
         uniqueConstraints = {@UniqueConstraint(columnNames = {"email"})}
 )
-@ApiModel(description="All details about the account")
+@ApiModel(description = "All details about the account. ")
 public class Account {
 
     //CTRL+ALT+L
     @Id
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @ApiModelProperty(notes = "The account id is generated for the Data Base")
+    @ApiModelProperty(notes = "The database generated Account ID")
     private Long id;
 
     @Column(name = "email", length = 100, nullable = false)
@@ -28,7 +28,6 @@ public class Account {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "state", length = 20, nullable = false)
-    @ApiModelProperty(notes = "The account state")
     private AccountState state;
 
     public Long getId() {

@@ -1,14 +1,13 @@
 package com.dh.fullstack.users.service.input;
 
-import com.dh.fullstack.users.service.model.domain.AccountState;
-
+/**
+ * @author Julio Daviu
+ */
 public class AccountInput {
 
     private String email;
 
     private Integer age;
-
-
 
     public String getEmail() {
         return email;

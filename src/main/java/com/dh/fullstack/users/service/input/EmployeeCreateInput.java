@@ -1,13 +1,19 @@
 package com.dh.fullstack.users.service.input;
 
+/**
+ * @author Julio Daviu
+ */
 public class EmployeeCreateInput {
 
     private String firstName;
+
     private String lastName;
 
-    private String pasword;
     private String email;
-    private String confirmPasword;
+
+    private String password;
+
+    private String confirmPassword;
 
     public String getFirstName() {
         return firstName;
@@ -25,14 +31,6 @@ public class EmployeeCreateInput {
         this.lastName = lastName;
     }
 
-    public String getPasword() {
-        return pasword;
-    }
-
-    public void setPasword(String pasword) {
-        this.pasword = pasword;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -41,13 +39,19 @@ public class EmployeeCreateInput {
         this.email = email;
     }
 
-    public String getConfirmPasword() {
-        return confirmPasword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setConfirmPasword(String confirmPasword) {
-        this.confirmPasword = confirmPasword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
 
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
+    }
 }
