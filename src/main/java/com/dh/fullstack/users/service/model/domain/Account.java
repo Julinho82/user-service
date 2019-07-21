@@ -6,7 +6,7 @@ import io.swagger.annotations.ApiModelProperty;
 import javax.persistence.*;
 
 /**
- * @author Julio Daviu
+ * @author Santiago Mamani
  */
 @Entity
 @Table(name = "account_table",

@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
- * @author Julio Daviu
+ * @author Santiago Mamani
  */
 @Entity
 @Table(name = "contract_table")

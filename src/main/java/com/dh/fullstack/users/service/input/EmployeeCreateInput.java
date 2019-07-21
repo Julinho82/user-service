@@ -1,7 +1,7 @@
 package com.dh.fullstack.users.service.input;
 
 /**
- * @author Julio Daviu
+ * @author Santiago Mamani
  */
 public class EmployeeCreateInput {
 

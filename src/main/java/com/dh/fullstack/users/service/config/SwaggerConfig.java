@@ -11,31 +11,34 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+/**
+ * @author Santiago Mamani
+ */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
+
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("users-api")
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.dh.fullstack.users.service.controller"))
+                .apis(RequestHandlerSelectors
+                        .basePackage("com.dh.fullstack.users.service.controller"))
                 .paths(PathSelectors.any())
-                .build().apiInfo(apiEndPointsInfo())
+                .build()
+                .apiInfo(apiEndPointsInfo())
                 .useDefaultResponseMessages(false);
     }
 
-    private ApiInfo apiEndPointsInfo () {
+    private ApiInfo apiEndPointsInfo() {
+
         return new ApiInfoBuilder()
                 .title("Users Service API")
                 .description("Users Management REST API ")
-                .contact(new Contact("Julio Daviu", "", "juliolotr@gmail.com"))
-                .version("0.0.1")
-
-                .license("Apache 1.0")
-                .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
+                .contact(new Contact("santiago", "", "sm.zeballos.umss@gmail.com"))
+                .version("0.0.2")
+                .license("Apache 1.0").licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
                 .build();
     }
-
-
 }

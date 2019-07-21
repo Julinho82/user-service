@@ -3,7 +3,7 @@ package com.dh.fullstack.users.service.model.domain;
 import javax.persistence.*;
 
 /**
- * @author Julio Daviu
+ * @author Santiago Mamani
  */
 @Entity
 @Table(name = "employee_table")

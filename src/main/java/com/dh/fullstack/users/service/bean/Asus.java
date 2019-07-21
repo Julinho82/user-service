@@ -1,8 +1,11 @@
 package com.dh.fullstack.users.service.bean;
 
+/**
+ * @author Santiago Mamani
+ */
 public class Asus {
 
-    private String name;
+    private  String name;
 
     public String getName() {
         return name;

@@ -1,7 +1,9 @@
 package com.dh.fullstack.users.service.input;
 
+import com.dh.fullstack.users.service.model.domain.AccountState;
+
 /**
- * @author Julio Daviu
+ * @author Santiago Mamani
  */
 public class AccountInput {
 

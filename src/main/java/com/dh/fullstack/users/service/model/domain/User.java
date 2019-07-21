@@ -6,10 +6,11 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
- * @author Julio Daviu
+ * @author Santiago Mamani
  */
 @Entity
 @Table(name = "user_table")
+//@DiscriminatorColumn(name = "tipo")
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class User {
 

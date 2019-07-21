@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 /**
- * @author Julio Daviu
+ * @author Santiago Mamani
  */
 @Configuration
 @PropertySource("classpath:/configuration/api-version.properties")

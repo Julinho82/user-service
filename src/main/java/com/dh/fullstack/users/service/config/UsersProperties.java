@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author Julio Daviu
+ * @author Santiago Mamani
  */
 @Configuration
 public class UsersProperties {

@@ -3,7 +3,7 @@ package com.dh.fullstack.users.service.model.domain;
 import javax.persistence.*;
 
 /**
- * @author Julio Daviu
+ * @author Santiago Mamani
  */
 @Entity
 @Table(name = "company_Table")
@@ -22,6 +22,4 @@ public class Company extends User{
     public void setName(String name) {
         this.name = name;
     }
-
-
 }

@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.annotation.RequestScope;
 
 /**
- * @author Julio Daviu
+ * @author Santiago Mamani
  */
 @Api(
         tags = "employee",

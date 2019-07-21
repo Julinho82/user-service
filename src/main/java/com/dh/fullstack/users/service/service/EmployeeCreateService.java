@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 
 /**
- * @author Julio Daviu
+ * @author Santiago Mamani
  */
 @Scope("prototype")
 @Service
